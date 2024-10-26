@@ -1,7 +1,7 @@
 // script.js
 
 // Configuración de GitHub
-const GITHUB_TOKEN = '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';
+const GITHUB_TOKEN = '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';
 const USERNAME = 'alaskaenc';
 const REPO_NAME = 'codigos';
 const JSON_PATH = 'prices.json'; // Ruta del archivo JSON
