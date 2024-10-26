@@ -1,7 +1,7 @@
 // script.js
 
 // Configuración de GitHub
-const GITHUB_TOKEN = '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';
+const GITHUB_TOKEN = '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';
 const USERNAME = 'alaskaenc';
 const REPO_NAME = 'codigos';
 const JSON_PATH = 'prices.json'; // Ruta del archivo JSON
@@ -61,8 +61,11 @@ async function uploadImageToGitHub(imageName, base64Content) {
     })
   });
 
-  if (!response.ok) throw new Error("Error al subir la imagen");
+  if (!response.ok) {
+  const errorData = await response.json(); // Obtener más detalles del error
+  throw new Error(`Error al subir la imagen: ${errorData.message}`);
 }
+
 
 // Función para actualizar el archivo JSON con la nueva imagen y precio
 async function updateJsonFile(price, imageName) {
