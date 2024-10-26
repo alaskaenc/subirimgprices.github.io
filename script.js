@@ -1,7 +1,7 @@
 // script.js
 
 // Configuración de GitHub
-const GITHUB_TOKEN = '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';
+const GITHUB_TOKEN = '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'; // Asegúrate de que sea correcto
 const USERNAME = 'alaskaenc';
 const REPO_NAME = 'codigos';
 const JSON_PATH = 'prices.json'; // Ruta del archivo JSON
@@ -61,10 +61,7 @@ async function uploadImageToGitHub(imageName, base64Content) {
     })
   });
 
-  if (!response.ok) {
-    const errorData = await response.json(); // Obtén el mensaje de error
-    throw new Error(`Error al subir la imagen: ${errorData.message}`);
-  }
+  if (!response.ok) throw new Error("Error al subir la imagen");
 }
 
 // Función para actualizar el archivo JSON con la nueva imagen y precio
@@ -75,7 +72,6 @@ async function updateJsonFile(price, imageName) {
       'Authorization': `token ${GITHUB_TOKEN}`
     }
   });
-  
   const jsonData = await jsonResponse.json();
   const sha = jsonData.sha; // SHA necesario para actualizar el JSON
   const content = JSON.parse(atob(jsonData.content)); // Decodifica y convierte el JSON
@@ -98,8 +94,5 @@ async function updateJsonFile(price, imageName) {
     })
   });
 
-  if (!updateResponse.ok) {
-    const errorData = await updateResponse.json();
-    throw new Error(`Error al actualizar el JSON: ${errorData.message}`);
-  }
+  if (!updateResponse.ok) throw new Error("Error al actualizar el JSON");
 }
