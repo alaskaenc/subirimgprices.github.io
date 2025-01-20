@@ -1,0 +1,106 @@
+/* Estilo global para el contenedor principal */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f6f9fc, #e9eff2);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal de carga de imagen y edición de precio */
+#uploadContainer {
+    width: 100%;
+    max-width: 500px; /* Limita el ancho */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Para permitir el posicionamiento absoluto */
+}
+
+/* Estilo para los títulos de las secciones */
+h2 {
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Estilo para los inputs */
+input[type="file"],
+input[type="text"] {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="file"]:hover,
+input[type="text"]:hover {
+    border-color: #0056b3;
+}
+
+/* Estilo para el botón */
+button {
+    padding: 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #24ce09;
+    transform: translateY(-2px);
+}
+
+/* Estilo para el contenedor de la vista previa */
+#previewContainer {
+    position: absolute;
+    top: -0px;  /* Ajusta la posición vertical */
+    right: -380px;  /* Lo coloca al costado derecho fuera del contenedor */
+    text-align: center;
+}
+
+#previewContainer img {
+    max-width: 355px;  /* Tamaño adecuado para la vista previa */
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Estilo para el contenedor de la vista previa */
+#editSection {
+    display: none;
+    margin-top: 20px;
+}
+
+#editSection h3 {
+    font-size: 18px;
+    color: #007bff;
+}
+
+#editPriceInput {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+}
+
+/* Deshabilitar inputs de precio y botón si no hay imagen */
+input[disabled], button[disabled] {
+    background-color: #ddd;
+    cursor: not-allowed;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Imagen y Editar Precio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al CSS -->
+</head>
+<body>
+
+    <div id="mainContainer">
+        <!-- Contenedor principal que contiene ambas secciones -->
+        <div id="uploadContainer">
+            <h2>Cargar Imagen</h2>
+            <input type="file" id="imageInput" accept="image/*">
+            <input type="text" id="priceInput" placeholder="Ingresa el precio">
+            <button id="uploadButton">Subir Imagen y Precio</button>
+
+            <!-- Progreso de carga -->
+            <div id="progressContainer" style="display:none;">
+                <div id="progressBar"></div>
+            </div>
+
+            <!-- Vista previa de la imagen cargada -->
+            <div id="previewContainer" style="display:none;">
+                <img id="imagePreview" src="" alt="Vista previa de la imagen">
+            </div>
+
+            <!-- Edición de precio -->
+            <h2>Editar Precio</h2>
+            <input type="text" id="searchInput" placeholder="Buscar por nombre de imagen">
+            <button id="searchButton">Buscar Imagen</button>
+            <div id="editSection" style="display:none;">
+                <h3 id="imageName"></h3>
+                <input type="text" id="editPriceInput" placeholder="Nuevo precio">
+                <button id="updatePriceButton">Actualizar Precio</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script> <!-- Enlace al script JS -->
+</body>
+</html>
